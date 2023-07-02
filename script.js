@@ -20,8 +20,12 @@ tabsContainer.addEventListener('click', (e) => {
   // That one is for when javascript is disabled, but if the code can run into here, it means javascript is enabled. So it is OK to remove the function
   e.preventDefault();
 
+  switchTab(clickedTab);
+});
+
+function switchTab(newTab) {
   // Get the href value
-  const activePanelId = clickedTab.getAttribute('href');
+  const activePanelId = newTab.getAttribute('href');
   // Get the tab panel that has the matching ID.
   const activePanel = tabsContainer.querySelector(activePanelId);
 
@@ -30,4 +34,4 @@ tabsContainer.addEventListener('click', (e) => {
   });
 
   activePanel.removeAttribute('hidden');
-});
+}
