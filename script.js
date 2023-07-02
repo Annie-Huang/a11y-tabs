@@ -3,6 +3,13 @@ const tabsList = tabsContainer.querySelector('ul');
 const tabButtons = tabsList.querySelectorAll('a');
 const tabPanels = tabsContainer.querySelectorAll('.tabs__panels > div');
 
+tabsList.setAttribute('role', 'tablist');
+
+// Remove the semantic of <li> because we only want to add the role=tab to the <a>
+tabsList.querySelectorAll('li').forEach((listitem) => {
+  listitem.setAttribute('role', 'presentation');
+});
+
 tabButtons.forEach((tab, index) => {
   if (index === 0) {
     // we'll add something here
