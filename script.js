@@ -14,6 +14,7 @@ tabButtons.forEach((tab, index) => {
   if (index === 0) {
     // we'll add something here
   } else {
+    tab.setAttribute('tabindex', '-1');
     tabPanels[index].setAttribute('hidden', '');
   }
 });
