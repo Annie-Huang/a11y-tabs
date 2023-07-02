@@ -12,6 +12,10 @@ tabButtons.forEach((tab, index) => {
 });
 
 tabsContainer.addEventListener('click', (e) => {
+  // If user didn't even click close to a <a>, we do nothing.
+  const clickedTab = e.target.closest('a');
+  if (!clickedTab) return;
+
   // This is to remove the function when we click the <a>, it will directly jump to the correct tab panel from the href setting.
   // That one is for when javascript is disabled, but if the code can run into here, it means javascript is enabled. So it is OK to remove the function
   e.preventDefault();
