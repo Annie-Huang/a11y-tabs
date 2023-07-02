@@ -19,6 +19,13 @@ tabButtons.forEach((tab, index) => {
   }
 });
 
+// Setting all the tab panel tab-able so when  user is click enter to a tab button, their
+// next tab will be on the corresponding tab panel. Other tab panels because they have attribute hidden, by default it is not accessible
+tabPanels.forEach((panel) => {
+  panel.setAttribute('role', 'tabpanel');
+  panel.setAttribute('tabindex', '0');
+});
+
 tabsContainer.addEventListener('click', (e) => {
   // If user didn't even click close to a <a>, we do nothing.
   const clickedTab = e.target.closest('a');
