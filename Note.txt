@@ -1,0 +1,6 @@
+Create Accessible Tabs with HTML, CSS & JS (https://www.youtube.com/watch?v=fI9VM5zzpu8)
+
+https://codepen.io/kevinpowell/pen/oNQgRKm
+https://github.com/Annie-Huang/a11y-tabs
+
+==============================================================================================
