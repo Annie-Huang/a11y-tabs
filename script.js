@@ -3,6 +3,11 @@ const tabsList = tabsContainer.querySelector('ul');
 const tabButtons = tabsList.querySelectorAll('a');
 const tabPanels = tabsContainer.querySelectorAll('.tabs__panels > div');
 
+// Note:
+// 1. According to Kevin, the aria-control is not very useful now, a lot of screen reading remove announcement on it
+//    That is why it was not added into here.
+// 2. In order to see all the setting correctly, you really should open devtool to see all the attributes|roles that are added into different elements
+
 tabsList.setAttribute('role', 'tablist');
 
 // Remove the semantic of <li> because we only want to add the role=tab to the <a>
@@ -11,7 +16,9 @@ tabsList.querySelectorAll('li').forEach((listitem) => {
 });
 
 tabButtons.forEach((tab, index) => {
+  tab.setAttribute('role', 'tab');
   if (index === 0) {
+    tab.setAttribute('aria-selected', 'true');
     // we'll add something here
   } else {
     tab.setAttribute('tabindex', '-1');
