@@ -65,4 +65,5 @@ function switchTab(newTab) {
 
   // The following is switch selected tab styling.
   newTab.setAttribute('aria-selected', true);
+  newTab.setAttribute('tabindex', '0');
 }
