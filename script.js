@@ -45,6 +45,10 @@ tabsContainer.addEventListener('click', (e) => {
   switchTab(clickedTab);
 });
 
+tabsContainer.addEventListener('keydown', (e) => {
+  moveLeft();
+});
+
 function moveLeft() {
   const currentTab = document.activeElement;
   if (!currentTab.parentElement.previousElementSibling) {
@@ -77,4 +81,6 @@ function switchTab(newTab) {
   // The following is switch selected tab styling.
   newTab.setAttribute('aria-selected', true);
   newTab.setAttribute('tabindex', '0');
+  // This is more for keyboard event, because you don't want to left arrow key but the focus still stay the the old selected tab button
+  newTab.focus();
 }
