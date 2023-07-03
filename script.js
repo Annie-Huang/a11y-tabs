@@ -54,10 +54,13 @@ tabsContainer.addEventListener('keydown', (e) => {
       moveRight();
       break;
     case 'Home':
+      // Home key by default will scroll the page. when the key is pressed, the window scrolls to the top
+      // https://en.wikipedia.org/wiki/Home_key
       e.preventDefault();
       switchTab(tabButtons[0]);
       break;
     case 'End':
+      // The same for end key
       e.preventDefault();
       switchTab(tabButtons[tabButtons.length - 1]);
       break;
