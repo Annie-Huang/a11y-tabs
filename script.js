@@ -45,6 +45,17 @@ tabsContainer.addEventListener('click', (e) => {
   switchTab(clickedTab);
 });
 
+function moveLeft() {
+  const currentTab = document.activeElement;
+  if (!currentTab.parentElement.previousElementSibling) {
+    switchTab(tabButtons[tabButtons.length - 1]);
+  } else {
+    switchTab(
+      currentTab.parentElement.previousElementSibling.querySelector('a')
+    );
+  }
+}
+
 function switchTab(newTab) {
   // Get the href value
   const activePanelId = newTab.getAttribute('href');
