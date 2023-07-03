@@ -1,3 +1,11 @@
+[role='tablist'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
 :root {
   /* either --dark-mode or --no-dark-mode */
   --color-scheme: var(--dark-mode);
