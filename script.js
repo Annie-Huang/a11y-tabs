@@ -51,9 +51,18 @@ function switchTab(newTab) {
   // Get the tab panel that has the matching ID.
   const activePanel = tabsContainer.querySelector(activePanelId);
 
+  // Make all tab button no selected and not tab-able first.
+  tabButtons.forEach((button) => {
+    button.setAttribute('aria-selected', false);
+    button.setAttribute('tabindex', '-1');
+  });
+
   tabPanels.forEach((panel) => {
     panel.setAttribute('hidden', true);
   });
 
   activePanel.removeAttribute('hidden');
+
+  // The following is switch selected tab styling.
+  newTab.setAttribute('aria-selected', true);
 }
