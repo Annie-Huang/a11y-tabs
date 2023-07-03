@@ -46,7 +46,22 @@ tabsContainer.addEventListener('click', (e) => {
 });
 
 tabsContainer.addEventListener('keydown', (e) => {
-  moveLeft();
+  switch (e.key) {
+    case 'ArrowLeft':
+      moveLeft();
+      break;
+    case 'ArrowRight':
+      moveRight();
+      break;
+    case 'Home':
+      e.preventDefault();
+      switchTab(tabButtons[0]);
+      break;
+    case 'End':
+      e.preventDefault();
+      switchTab(tabButtons[tabButtons.length - 1]);
+      break;
+  }
 });
 
 function moveLeft() {
