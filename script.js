@@ -60,6 +60,15 @@ function moveLeft() {
   }
 }
 
+function moveRight() {
+  const currentTab = document.activeElement;
+  if (!currentTab.parentElement.nextElementSibling) {
+    switchTab(tabButtons[0]);
+  } else {
+    switchTab(currentTab.parentElement.nextElementSibling.querySelector('a'));
+  }
+}
+
 function switchTab(newTab) {
   // Get the href value
   const activePanelId = newTab.getAttribute('href');
