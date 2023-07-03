@@ -6,6 +6,12 @@
   gap: 1rem;
 }
 
+[aria-selected='true'] {
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 0.5em;
+  color: orangered;
+}
+
 :root {
   /* either --dark-mode or --no-dark-mode */
   --color-scheme: var(--dark-mode);
